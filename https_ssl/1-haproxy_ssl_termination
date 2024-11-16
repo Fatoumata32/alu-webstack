@@ -39,7 +39,7 @@ frontend davez-tech-frontend
 frontend fatoumata32-tech-frontend-https
     bind *:443 ssl crt /etc/haproxy/certs/www.fatoumata32.tech.pem
     http-request set-header X-Forwarded-Proto https
-    default_backend davez-tech-backend
+    default_backend  fatoumata32-tech-backend
 
 backend fatoumata32-tech-backend
     balance roundrobin
