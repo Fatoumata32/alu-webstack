@@ -32,24 +32,24 @@ defaults
     errorfile 503 /etc/haproxy/errors/503.http
     errorfile 504 /etc/haproxy/errors/504.http
 
-frontend davez-tech-frontend
+frontend fatoumata32.tech-frontend
     bind *:80
     mode http
     http-request redirect scheme https code 301 unless { ssl_fc }
     http-request set-header X_Forwarded-Proto http
-    default_backend davez-tech-backend
+    default_backend fatoumata32.tech-backend
 
 frontend davez-tech-frontend-https
-    bind *:443 ssl crt /etc/haproxy/certs/www.davez.tech.pem
+    bind *:443 ssl crt /etc/haproxy/certs/www.fatoumata32.tech.pem
     http-request set-header X-Forwarded-Proto https
-    default_backend davez-tech-backend
+    default_backend fatoumata32.tech-backend
 
 frontend http-in
     bind *:80
     mode http
     redirect scheme https code 301 if !{ ssl_fc }
 
-backend davez-tech-backend
+backend fatoumata32.tech-backend
     balance roundrobin
     server 6058-web-01 3.92.139.185:80 check
     server 6058-web-02 54.173.48.37:80 check
