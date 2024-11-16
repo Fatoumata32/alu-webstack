@@ -34,10 +34,10 @@ frontend davez-tech-frontend
     mode http
     http-request redirect scheme https code 301 unless { ssl_fc }
     http-request set-header X_Forwarded-Proto http
-    default_backend davez-tech-backend
+    default_backend fatoumata32-tech-backend
 
 frontend davez-tech-frontend-https
-    bind *:443 ssl crt /etc/haproxy/certs/www.davez.tech.pem
+    bind *:443 ssl crt /etc/haproxy/certs/www.fatoumata32.tech.pem
     http-request set-header X-Forwarded-Proto https
     default_backend davez-tech-backend
 
